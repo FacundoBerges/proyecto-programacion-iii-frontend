@@ -1,0 +1,136 @@
+:root {
+	--bg-color: #ffffff;
+	--text-color: #242424;
+	--text-color-hover: #444444d8;
+	--primary-color: #3cdf80;
+	--card-bg-color: #f0f0f0;
+	--card-bg-hover-color: #f0f0f0e7;
+}
+
+.dark-theme {
+	--bg-color: #242424;
+	--text-color: rgba(255, 255, 255, 0.87);
+	--text-color-hover: #ffffff9f;
+	--primary-color: #1fa73d;
+	--card-bg-color: #1a1a1a;
+	--card-bg-hover-color: #1a1a1ad2;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+	min-width: 320px;
+	min-height: 100vh;
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+	background: var(--primary-color);
+	padding: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+	margin-bottom: 1rem;
+
+	h1 {
+		color: var(--text-color);
+	}
+
+	a {
+		color: var(--text-color) !important;
+	}
+
+	a:hover,
+	a:focus,
+	a:active {
+		color: var(--text-color-hover) !important;
+	}
+
+	nav {
+		align-items: center;
+		display: flex;
+		gap: 1rem;
+		justify-content: space-between;
+		flex-grow: 1;
+
+		ul {
+			flex-grow: 1;
+			display: flex;
+			justify-content: space-between;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			.dropdown-menu.show {
+				background-color: var(--bg-color);
+
+				.dropdown-item:hover {
+					background-color: var(--primary-color);
+				}
+
+				.dropdown-item:active {
+					background-color: var(--primary-color);
+				}
+			}
+		}
+	}
+
+	.login {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+
+		button {
+			padding: 0.5rem;
+		}
+	}
+
+	.button {
+		transition: all 0.3s ease;
+		background-color: var(--card-bg-color);
+		border: none;
+		border-radius: 0.3rem;
+		cursor: pointer;
+		color: var(--text-color);
+		font-size: 1rem;
+	}
+
+	.button:hover {
+		background-color: var(--card-bg-hover-color);
+	}
+
+	.theme-toggler {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.button {
+			margin: 0.5rem;
+			height: 2rem;
+			width: 2rem;
+		}
+	}
+}
+
+footer {
+	background: var(--primary-color);
+	color: var(--text-color);
+	text-align: center;
+	padding: 1rem;
+	margin-top: 2rem;
+
+	p {
+		margin: 0;
+	}
+}
